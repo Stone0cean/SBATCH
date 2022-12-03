@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #SBATCH --job-name=CircadianAnalysisJoey
 #SBATCH --ntasks=1
