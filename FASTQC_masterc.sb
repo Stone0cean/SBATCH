@@ -1,7 +1,0 @@
-#!/bin/bash
-
-#SBATCH --job-name=Analysis_Joey
-
-# sample_var=([1]='ERR3310285' [2]='ERR3310286' [3]='ERR3310287' [4]='ERR3310288' [5]='ERR3310289' [6]='ERR3310290' [7]='ERR3310291' [8]='ERR3310292' [9]='ERR3310293' [10]='ERR3310294' [11]='ERR3310295' [12]='ERR3310296' [13]='ERR3310297' [14]='ERR3310298' [15]='ERR3310299' [16]='ERR3310300' [17]='ERR3310301' [18]='ERR3310302' [19]='ERR3310303' [20]='ERR3310304' [21]='ERR3310305' [22]='ERR3310306' [23]='ERR3310307' [24]='ERR3310308')
-
-for i in {285..308}; do echo 'FASTQC_$i' sbatch --export=x=$i --output=fastqc_$i.out --error=fastqc_$i.err /mnt/home/jenchiay/FASTQCchildcommand.sb; done
