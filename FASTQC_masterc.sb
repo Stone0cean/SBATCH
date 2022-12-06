@@ -1,8 +1,0 @@
-#!/bin/bash
-
-#SBATCH --job-name=Analysis_Joey
-
-for i in {285..308}; do 
-    echo 'FASTQC_$i'
-    sbatch --export=x=$i --output=fastqc_$i.out --error=fastqc_$i.err /mnt/home/jenchiay/FASTQCchildcommand.sb
-done
