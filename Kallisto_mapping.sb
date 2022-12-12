@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -N 1 -n 8 --time=1:30:00 --mem=20gb
+#SBATCH -J mapping_Kallisto
+
+module purge
+module load GCC/8.3.0 OpenMPI/3.1.4 kallisto/0.46.1
+
+mkdir -p /mnt/scratch/jenchiay/Kallisto_mapping/Romanowski2020
+
+INPUT=/mnt/scratch/jenchiay/Trimmed_files/Romanowski2020
+OUTPUT=/mnt/scratch/jenchiay/Kallisto_mapping/Romanowski2020/ERR3310$x
+Index=/mnt/scratch/jenchiay/Kallisto_mapping/Index_At
+
+mkdir -p $OUTPUT
+cd INPUT
+kallisto quant -i /mnt/scratch/jenchiay/Kallisto_mapping/Index_At/Kallindex_At -o $OUTPUT ERR3310$x"_1_trimmed.fastq" ERR3310$x"_2_trimmed.fastq"

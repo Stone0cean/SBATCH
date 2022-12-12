@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#SBATCH --job-name=Analysis_Joey
+
+for i in {285..308}; do echo "Kallisto: ERR3310$i"; sbatch --export=x=$i --output=Kallisto_ERR3310$i.out --error=Kallisto_ERR3310$i.err /mnt/home/jenchiay/Kallisto_mapping.sb; done
